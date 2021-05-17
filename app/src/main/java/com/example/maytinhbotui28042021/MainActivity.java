@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -110,10 +112,11 @@ public class MainActivity extends AppCompatActivity {
                 int valueSoThu1 = Integer.parseInt(textSoThu1);
                 int valueSoThu2 = Integer.parseInt(textSoThu2);
 
+                DecimalFormat decimalFormat = new DecimalFormat("#,###");
 
                 int ketQua = valueSoThu1 * valueSoThu2;
 
-                mTvKetQua.setText("Kết quả = " + ketQua);
+                mTvKetQua.setText("Kết quả = " + decimalFormat.format(ketQua).replace(",","."));
             }
         });
         mBtnTru.setOnClickListener(new View.OnClickListener() {
