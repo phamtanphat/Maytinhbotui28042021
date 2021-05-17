@@ -50,11 +50,91 @@ public class MainActivity extends AppCompatActivity {
                 String textSoThu1 = mEdtSoThu1.getText().toString();
                 String textSoThu2 = mEdtSoThu2.getText().toString();
 
+                // validate
+
+                if (textSoThu1.equals("") || textSoThu2.equals("")){
+                    Toast.makeText(MainActivity.this, "Bạn chưa nhập đủ thông tin", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 int valueSoThu1 = Integer.parseInt(textSoThu1);
                 int valueSoThu2 = Integer.parseInt(textSoThu2);
 
 
                 int ketQua = valueSoThu1 + valueSoThu2;
+
+                mTvKetQua.setText("Kết quả = " + ketQua);
+            }
+        });
+        mBtnChia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Lấy dữ liệu từ edittext;
+                String textSoThu1 = mEdtSoThu1.getText().toString();
+                String textSoThu2 = mEdtSoThu2.getText().toString();
+
+                // validate
+
+                if (textSoThu1.equals("") || textSoThu2.equals("")){
+                    Toast.makeText(MainActivity.this, "Bạn chưa nhập đủ thông tin", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                double valueSoThu1 = Double.parseDouble(textSoThu1);
+                double valueSoThu2 = Double.parseDouble(textSoThu2);
+
+                if (valueSoThu2 == 0){
+                    Toast.makeText(MainActivity.this, "Không chia cho giá trị 0", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                double ketQua = valueSoThu1 / valueSoThu2;
+
+                mTvKetQua.setText("Kết quả = " + ketQua);
+            }
+        });
+        mBtnNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Lấy dữ liệu từ edittext;
+                String textSoThu1 = mEdtSoThu1.getText().toString();
+                String textSoThu2 = mEdtSoThu2.getText().toString();
+
+                // validate
+
+                if (textSoThu1.equals("") || textSoThu2.equals("")){
+                    Toast.makeText(MainActivity.this, "Bạn chưa nhập đủ thông tin", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int valueSoThu1 = Integer.parseInt(textSoThu1);
+                int valueSoThu2 = Integer.parseInt(textSoThu2);
+
+
+                int ketQua = valueSoThu1 * valueSoThu2;
+
+                mTvKetQua.setText("Kết quả = " + ketQua);
+            }
+        });
+        mBtnTru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Lấy dữ liệu từ edittext;
+                String textSoThu1 = mEdtSoThu1.getText().toString();
+                String textSoThu2 = mEdtSoThu2.getText().toString();
+
+                // validate
+
+                if (textSoThu1.equals("") || textSoThu2.equals("")){
+                    Toast.makeText(MainActivity.this, "Bạn chưa nhập đủ thông tin", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int valueSoThu1 = Integer.parseInt(textSoThu1);
+                int valueSoThu2 = Integer.parseInt(textSoThu2);
+
+
+                int ketQua = valueSoThu1 - valueSoThu2;
 
                 mTvKetQua.setText("Kết quả = " + ketQua);
             }

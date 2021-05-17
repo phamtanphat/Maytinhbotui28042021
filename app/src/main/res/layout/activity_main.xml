@@ -39,7 +39,7 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:layout_gravity="center"
-        android:text="Kết quả = 10"
+        android:text="Kết quả = 0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <LinearLayout
